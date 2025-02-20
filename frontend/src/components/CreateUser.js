@@ -225,7 +225,9 @@ const CreateUser = () => {
         </button>
       </form>
       <button
-        onClick={() => navigate("/user/admin")}
+        onClick={() =>
+          navigate("https://login-api-mocha.vercel.app/user/login")
+        }
         style={{
           padding: "10px",
           backgroundColor: "#28a745",

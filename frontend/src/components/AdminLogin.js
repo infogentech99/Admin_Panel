@@ -15,7 +15,7 @@ const AdminLogin = () => {
       const res = await fetch(
         `https://loginapi-orya.onrender.com/admin/login/${username}/${password}`,
         {
-          method: "GET",
+          method: "POST",
           headers: { "Content-Type": "application/json" },
         }
       );

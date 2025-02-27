@@ -9,7 +9,7 @@ const LeaderDashboard = () => {
         const fetchUsers = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:5000/leader/assigned-users", { headers: { Authorization: token } });
+                const response = await axios.get("https://admin-panel-ejmu.onrender.com/leader/assigned-users", { headers: { Authorization: token } });
 
                 setAssignedUsers(response.data.assignedUsers);
             } catch (error) {

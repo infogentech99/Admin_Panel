@@ -42,7 +42,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/admin/get-users", {
+      const response = await fetch("https://admin-panel-ejmu.onrender.com/admin/get-users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5000/admin/create-user", {
+      const response = await fetch("https://admin-panel-ejmu.onrender.com/admin/create-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -94,7 +94,7 @@ const AdminDashboard = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this user?");
     if (!confirmDelete) return;
     try {
-      const response = await fetch(`http://localhost:5000/admin/delete-user/${userId}`, {
+      const response = await fetch(`https://admin-panel-ejmu.onrender.com/admin/delete-user/${userId}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -111,7 +111,7 @@ const AdminDashboard = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/admin/update-user/${editingUser._id}`, {
+      const response = await fetch(`https://admin-panel-ejmu.onrender.com/admin/update-user/${editingUser._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editingUser),
@@ -134,7 +134,7 @@ const AdminDashboard = () => {
     console.log("Login Data Sent:", loginData); // Debugging
 
     try {
-        const response = await fetch("http://localhost:5000/admin/user-leader-login", {
+        const response = await fetch("https://admin-panel-ejmu.onrender.com/admin/user-leader-login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(loginData),
@@ -173,7 +173,7 @@ const AdminDashboard = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5000/admin/assign-leader", {
+      const response = await fetch("https://admin-panel-ejmu.onrender.com/admin/assign-leader", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

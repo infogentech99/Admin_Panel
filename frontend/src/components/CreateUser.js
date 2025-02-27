@@ -22,7 +22,7 @@ const CreateUser = () => {
     const newUser = { username, password, contact, email, status, role };
 
     try {
-      const response = await fetch("http://localhost:5000/admin/create-user", {
+      const response = await fetch("https://admin-panel-ejmu.onrender.com/admin/create-user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

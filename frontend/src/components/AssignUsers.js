@@ -13,8 +13,8 @@ const AssignUsers = () => {
         const fetchData = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const leaderRes = await axios.get("http://localhost:5000/admin/get-users?role=leader", { headers: { Authorization: token } });
-                const userRes = await axios.get("http://localhost:5000/admin/get-users?role=user", { headers: { Authorization: token } });
+                const leaderRes = await axios.get("https://admin-panel-ejmu.onrender.com/admin/get-users?role=leader", { headers: { Authorization: token } });
+                const userRes = await axios.get("https://admin-panel-ejmu.onrender.com/admin/get-users?role=user", { headers: { Authorization: token } });
 
                 setLeaders(leaderRes.data.users); // Use 'users' key from response
                 setUsers(userRes.data.users);
@@ -40,7 +40,7 @@ const AssignUsers = () => {
         try {
             setLoading(true);
             const token = localStorage.getItem("token");
-            await axios.post("http://localhost:5000/admin/assign-users", 
+            await axios.post("https://admin-panel-ejmu.onrender.com/admin/assign-users", 
                 { leaderId: selectedLeader, userIds: selectedUsers }, 
                 { headers: { Authorization: token } }
             );
